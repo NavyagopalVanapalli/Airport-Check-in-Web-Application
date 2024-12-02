@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airline Info</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+    <main id="gallery-view">
+        <div class="background">
+            <div class="image-container1">
+                <img src="plane2-removebg-preview.png" alt="plane" class="planeimage" onclick="showDetails('plane1')">
+            </div>
+            <div class="image">
+                <div class="image-container2">
+                    <img src="airportlogo.jpg" alt="logo" class="logo" onclick="showDetails('logo')">
+                    <img src="info.jpg" alt="info" class="infoimage" onclick="showDetails('info')">
+                </div>
+            </div>
+        </div>
+    </main>
+    <section id="details-view" style="display: none;">
+        <div id="detail-plane1" class="detail-card theme1" style="display: none;">
+            <img src="plane2-removebg-preview.png" alt="Plane Details">
+            <div class="detail-info">
+                <h1>Types of Flights</h1>
+                <p>Boeing 771</p>
+                <p>Indigo 571</p>
+                <p>Jazz 471</p>
+                <p>jknfm, 771</p>
+                <p>knmx 771</p>
+                <button onclick="clearInputsAndBack()">Back to Gallery</button>
+            </div>
+        </div>
+        <div id="detail-logo" class="detail-card theme2" style="display: none;">
+            <img src="airportlogo.jpg" alt="Logo Details">
+            <div class="detail-info">
+                <h1>Airport Logo</h1>
+                <p>This represents the brand identity of our airline service.</p>
+                <button onclick="clearInputsAndBack()">Back to Gallery</button>
+            </div>
+        </div>
+        <div id="detail-info" class="detail-card theme3" style="display: none;">
+            <img src="info.jpg" alt="Info Details">
+            <div class="detail-info">
+                <h1>Information Center</h1>
+                <p>Fill in the details below to explore more:</p>
+                <div class="input-form">
+                    <input id="from-input" type="text" placeholder="From" class="form-input">
+                    <input id="to-input" type="text" placeholder="To" class="form-input">
+                    <button class="form-button" onclick="searchFlights()">Search</button>
+                    <button class="form-button" onclick="clearInputsAndBack()">Back to Gallery</button>
+                </div>
+                <div id="flight-info" class="flight-info" style="display: none;">
+                    <table id="flight-table" class="flight-table">
+                        <thead>
+                            <tr>
+                                <th>Flight Name</th>
+                                <th>Time</th>
+                                <th>Journey Time</th>
+                                <th>Stops</th>
+                                <th>Cost</th>
+                                <th>Start Destination</th>
+                                <th>End Destination</th>
+                            </tr>
+                        </thead>
+                        <tbody id="flight-table-body">
+                            <!-- Rows will be added dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </section>
+    <script src="script.js"></script>
+</body>
